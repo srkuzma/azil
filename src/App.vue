@@ -6,7 +6,7 @@
       </div>
       <div class="container-fluid">
         <nav class="navbar navbar-expand-lg custom_nav-container pt-3">
-          <router-link  class="navbar-brand" to="/">
+          <router-link  class="navbar-brand logo" to="/">
             <img src="images/logo.png" alt="">
             <span class="title">
               Azil Badi
@@ -92,5 +92,9 @@
   @import './assets/css/responsive.css';
   @import './assets/css/style.css';
   @import './assets/css/style.scss';
+
+  .title:hover {
+    color: deepskyblue !important;
+  }
 
 </style>
