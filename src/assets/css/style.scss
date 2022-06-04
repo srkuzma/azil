@@ -156,21 +156,22 @@ body {
 
 .custom_nav-container.navbar-expand-lg .navbar-nav .nav-link {
   padding: 10px 25px;
-  color: #ffffff;
   text-align: center;
   /*text-transform: uppercase;*/
   @include secondary-font();
 }
 
-a,
-a:hover,
-a:focus {
-  text-decoration: none;
+a {
+  color: white;
+}
+
+a:visited {
+  color: white;
 }
 
 a:hover,
 a:focus {
-  color: initial;
+  color: deepskyblue;
 }
 
 .btn,
@@ -183,7 +184,6 @@ a:focus {
 .navbar-brand:hover {
   @include upperBold;
   font-size: 24px;
-  color: #fafcfd;
 }
 
 .custom_nav-container .nav_search-btn {
