@@ -2,31 +2,14 @@
   <div class="hero_area">
     <header class="header_section">
       <div class="container">
-        <div class="top_contact-container">
-          <div class="tel_container">
-            <a href="">
-              <img src="images/telephone-symbol-button.png" alt=""> Call : +01 1234567890
-            </a>
-          </div>
-          <div class="social-container">
-            <a href="">
-              <img src="images/fb.png" alt="" class="s-1">
-            </a>
-            <a href="">
-              <img src="images/twitter.png" alt="" class="s-2">
-            </a>
-            <a href="">
-              <img src="images/instagram.png" alt="" class="s-3">
-            </a>
-          </div>
-        </div>
+        
       </div>
       <div class="container-fluid">
         <nav class="navbar navbar-expand-lg custom_nav-container pt-3">
           <router-link  class="navbar-brand" to="/">
             <img src="images/logo.png" alt="">
-            <span>
-              Medion
+            <span class="title">
+              Azil Badi
             </span>
           </router-link>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -68,6 +51,16 @@
                   </span>
                 </a>
               </div>
+              <div class="flag_btn-contanier ml-0 ml-lg-5">
+                <a href="">
+                  <img src="images/flag_rs.png" alt="">
+                </a>
+                <a href="">
+                  <img src="images/flag_uk.png" alt="">
+                </a>
+              </div>
+                
+              
             </div>
           </div>
 
@@ -82,8 +75,9 @@
   <div>
     <section class="container-fluid footer_section">
     <p>
-      &copy; 2019 All Rights Reserved. Design by
-      <a href="https://html.design/">Free Html Templates</a>
+      &copy; Copyright 2022, Dejan Kovačević i Srđan Kuzmanović
+       <br>
+       Odsek za softversko inženjerstvo Elektrotehničkog fakulteta Univerziteta u Beogradu
     </p>
   </section>
   </div>
