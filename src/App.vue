@@ -21,22 +21,32 @@
             <div class="d-flex  flex-column flex-lg-row align-items-center w-100 justify-content-between">
               <ul class="navbar-nav  ">
                 <li class="nav-item active">
-                  <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                  <router-link class="nav-link" to="/">Pocetna</router-link>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="about.html"> About </a>
+                  <div class="dropdown">
+                    <a class="dropdown-toggle dropdown-button nav-link" role="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">
+                      Zivotinje
+                    </a>
+
+                    <div class="dropdown-menu dark-dropdown text-warning justify-content-begin" aria-labelledby="dropdownMenuButton">
+                        <router-link class="nav-link" to="/zivotinje/psi">Psi</router-link>
+                        <router-link class="nav-link" to="/zivotinje/ptice">Ptice</router-link>
+                        <router-link class="nav-link" to="/zivotinje/macke">Macke</router-link>
+                    </div>
+                  </div>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="medicine.html"> Medicine </a>
+                  <router-link class="nav-link" to="/izgubljeni_ljubimci">Izgubljeni ljubimci</router-link>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="buy.html"> Online Buy </a>
+                  <router-link class="nav-link" to="/dodaj_oglas">Dodaj oglas</router-link>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="news.html"> News </a>
+                  <router-link class="nav-link" to="/moj_nalog">Moj nalog</router-link>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="contact.html">Contact us</a>
+                  <router-link class="nav-link" to="/o_nama">O nama</router-link>
                 </li>
               </ul>
               <form class="form-inline ">
@@ -93,8 +103,9 @@
   @import './assets/css/style.css';
   @import './assets/css/style.scss';
 
-  .title:hover {
-    color: deepskyblue !important;
+  .dark-dropdown {
+    background-color: #2c2c2c;
+    border-color: #2c2c2c;
   }
 
 </style>
