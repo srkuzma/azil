@@ -789,6 +789,13 @@ a:focus {
           box-shadow: none;
 }
 
+.contact_section .form_contaier form .form-control#description {
+  border-radius: 0;
+  height: 100px;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
 .contact_section .form_contaier form .form-control#exampleInputMessage {
   height: 100px;
 }
