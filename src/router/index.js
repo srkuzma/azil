@@ -7,46 +7,93 @@ import LostPets from '../views/LostPets.vue'
 import NewAd from '../views/NewAd.vue'
 import MyAccount from '../views/MyAccount.vue'
 import AboutView from '../views/AboutView.vue'
+// import HomeLang from '../views/HomeLang.vue'
 
 const routes = [
+  {
+    path: '/en',
+    name: 'home_en',
+    component: Home
+  },
+  {
+    path: '/sr',
+    name: 'home_sr',
+    component: Home
+  },
   {
     path: '/',
     name: 'home',
     component: Home
   },
+
   {
-    path: '/zivotinje/psi',
-    name: 'dogs',
+    path: '/sr/zivotinje/psi',
+    name: 'dogs_sr',
     component: DogsView
   },
   {
-    path: '/zivotinje/ptice',
-    name: 'birds',
+    path: '/sr/zivotinje/ptice',
+    name: 'birds_sr',
     component: BirdsView
   },
   {
-    path: '/zivotinje/macke',
-    name: 'cats',
+    path: '/sr/zivotinje/macke',
+    name: 'cats_sr',
     component: CatsView
   },
   {
-    path: '/izgubljeni_ljubimci',
-    name: 'lost_pets',
+    path: '/sr/izgubljeni_ljubimci',
+    name: 'lost_pets_sr',
     component: LostPets
   },
   {
-    path: '/dodaj_oglas',
-    name: 'new_ad',
+    path: '/sr/dodaj_oglas',
+    name: 'new_ad_sr',
     component: NewAd
   },
   {
-    path: '/moj_nalog',
+    path: '/sr/moj_nalog',
+    name: 'my_account_sr',
+    component: MyAccount
+  },
+  {
+    path: '/sr/o_nama',
+    name: 'about_sr',
+    component: AboutView
+  },
+  {
+    path: '/en/animals/dogs',
+    name: 'dogs_en',
+    component: DogsView
+  },
+  {
+    path: '/en/animals/birds',
+    name: 'birds_en',
+    component: BirdsView
+  },
+  {
+    path: '/en/animals/cats',
+    name: 'cats_en',
+    component: CatsView
+  },
+  {
+    path: '/en/lost_pets',
+    name: 'lost_pets_en',
+    component: LostPets
+  },
+  {
+    path: '/en/new_ad',
+    name: 'new_ad_en',
+    component: NewAd
+  },
+  {
+    path: '/en/my_account',
     name: 'my_account',
     component: MyAccount
   },
   {
-    path: '/o_nama',
-    name: 'about',
+    path: '/en/about',
+    name: 'about_en',
     component: AboutView
   }
 ]

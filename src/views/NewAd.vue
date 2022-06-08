@@ -13,7 +13,7 @@
                     </div>
                     <div class="form-group">
                         <label for="phone_number">Telefon</label>
-                        <input type="number" class="form-control" id="phone_number" v-model="phone_number">
+                        <input type="tel" class="form-control" id="phone_number" v-model="phone_number">
                     </div>
                     <div class="row">
                         <div class="col text-right">
