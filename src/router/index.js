@@ -7,6 +7,8 @@ import LostPets from '../views/LostPets.vue'
 import NewAd from '../views/NewAd.vue'
 import MyAccount from '../views/MyAccount.vue'
 import AboutView from '../views/AboutView.vue'
+import Login from '../views/Login.vue'
+
 // import HomeLang from '../views/HomeLang.vue'
 
 const routes = [
@@ -88,14 +90,20 @@ const routes = [
   },
   {
     path: '/en/my_account',
-    name: 'my_account',
+    name: 'my_account_en',
     component: MyAccount
   },
   {
-    path: '/en/about',
-    name: 'about_en',
-    component: AboutView
-  }
+    path: '/sr/login',
+    name: 'login_sr',
+    component: Login
+  },
+  {
+    path: '/en/login',
+    name: 'login_en',
+    component: Login
+  },
+
 ]
 
 const router = createRouter({

@@ -2,17 +2,38 @@
   <div class="hero_area">
     <header class="header_section">
       <div class="container">
-        
-      </div>
+        <div class="top_contact-container">
+          <div class="tel_container">
+            <a href="">
+              <img src="/images/telephone-symbol-button.png" alt=""> Call : +01 1234567890
+            </a>
+          </div>
+          <div class="social-container">
+            <a href="">
+              <img src="/images/fb.png" alt="" class="s-1">
+            </a>
+            <a href="">
+              <img src="/images/twitter.png" alt="" class="s-2">
+            </a>
+            <a href="">
+              <img src="/images/instagram.png" alt="" class="s-3">
+            </a>
+          </div>
+        </div>
+      </div>      
+
       <div class="container-fluid">
         <nav class="navbar navbar-expand-lg custom_nav-container pt-3">
-          <router-link  class="navbar-brand logo" to="/">
+          <router-link v-if="lang == 'sr'" class="navbar-brand logo" to="/sr">
             <img src="/images/logo.png" alt="">
-            <span v-if= "lang == 'sr'" class="title">
+            <span class="title">
               Azil Badi
             </span>
-            <span v-else class="title">
-              Asylum Badi
+          </router-link>
+          <router-link v-else class="navbar-brand logo" to="/en">
+            <img src="/images/logo.png" alt="">
+            <span class="title">
+              Shelter Badi
             </span>
           </router-link>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -68,12 +89,19 @@
                 <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit"></button>
               </form>
               <div class="login_btn-contanier ml-0 ml-lg-5">
-                <a href="">
+                <router-link v-if= "lang == 'sr'" to="/sr/login">
                   <img src="/images/user.png" alt="">
-                  <span id="login">
+                  <span>
                     Login
                   </span>
-                </a>
+                  
+                </router-link>
+                <router-link v-else to="/en/login">
+                  <img src="/images/user.png" alt="">
+                  <span>
+                    Login
+                  </span>
+                </router-link>
               </div>
               <div class="flag_btn-contanier ml-0 ml-lg-5">
                 <a href="">
@@ -91,20 +119,22 @@
         </nav>
       </div>
     </header>
-      <router-view/>
-    
-  </div>
 
 
-  <div>
-    <section class="container-fluid footer_section">
+  <router-view/>
+
+  <section class="container-fluid footer_section">
     <p>
       &copy; Copyright 2022, Dejan Kovačević i Srđan Kuzmanović
-       <br>
-       Odsek za softversko inženjerstvo Elektrotehničkog fakulteta Univerziteta u Beogradu
+      <br>
+      Odsek za softversko inženjerstvo Elektrotehničkog fakulteta Univerziteta u Beogradu
     </p>
-  </section>
+  </section>  
   </div>
+
+  
+  
+  
 
   
 </template>
@@ -155,6 +185,7 @@ export default {
             {sr:"/sr/izgubljeni_ljubimci", en:"/en/lost_pets"},
             {sr:"/sr/o_nama", en:"/en/about"},
             {sr:"/sr/dodaj_oglas", en:"/en/new_ad"},
+            {sr:"/sr/login", en:"/en/login"},
             {sr:"/sr", en:"/en"}];
           if (curr_lang == "sr"){
             return pairs.find(pair => pair.sr == fullPath).en;
