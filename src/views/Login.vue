@@ -1,18 +1,16 @@
 <template>
     <!-- contact section -->
   <section class="contact_section layout_padding">
-    <!-- <div class="container">
-      <div class="row justify-content-center">
-        
-      </div>
-    </div> -->
     <div class="container layout_padding3">
       <div class="row justify-content-center">
         <div class="col-xl-6 col-lg-7 col-md-8 col-sm-9 col-10" id="login-form">
             <div class="custom_heading-container " >
-                <h1>
-                    Login
-                </h1>
+                <h2 v-if="lang == 'sr'">
+                    PRIJAVA
+                </h2>
+                <h2 v-else>
+                    LOGIN
+                </h2>
             </div>
 
             <br>
@@ -20,17 +18,20 @@
             <div class="form_contaier">
             <form>
               <div class="form-group">
-                <label for="exampleInputName1">Username</label>
+                <label v-if="lang == 'sr'" for="exampleInputName1">Korisničko ime</label>
+                <label v-else for="exampleInputName1">Username</label>
                 <input type="text" class="form-control" id="exampleInputName1" v-model="username">
               </div>
               <div class="form-group">
-                <label for="exampleInputName1">Password</label>
+                <label v-if="lang == 'sr'" for="exampleInputName1">Šifra</label>
+                <label v-else for="exampleInputName1">Password</label>
                 <input type="password" class="form-control" id="exampleInputName1" v-model="password">
               </div>
 
-             <div class="error">{{error}}</div>
+            <div class="error">{{error}}</div>
               
-              <button type="submit" class="" @click="login()">Confirm</button>
+            <button v-if="lang == 'sr'" type="submit" class="" @click="login()">Potvrdi</button>
+            <button v-else type="submit" class="" @click="login()">Confirm</button>
             </form>
           </div>
         </div>
@@ -67,7 +68,6 @@ export default {
         this.error = localStorage.getItem("error");
         if (!this.error)
             this.error = ""
-        console.log(this.users)
     },
     methods: {
         login(){

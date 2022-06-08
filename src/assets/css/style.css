@@ -760,6 +760,12 @@ a:focus {
           justify-content: start;
 }
 
+.contact_section .custom_heading-container h3::after {
+  left: 0;
+  -webkit-transform: none;
+          transform: none;
+}
+
 .contact_section .custom_heading-container h2::after {
   left: 0;
   -webkit-transform: none;
