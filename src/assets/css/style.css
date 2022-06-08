@@ -61,7 +61,7 @@ body {
 /*header section*/
 .hero_area {
   height: 100vh;
-  /* background-image: url(../../../public/images/hero-bg.jpg); */
+  background-image: url(../../../public/images/hero-bg.jpg);
 }
 
 .sub_page .hero_area {
@@ -145,8 +145,8 @@ a:visited {
 
 a:hover,
 a:focus {
-  color: deepskyblue
-}
+  color: rgb(213, 234, 250);
+} 
 
 .btn,
 .btn:focus {
@@ -868,5 +868,6 @@ a:focus {
 .title {
   font-family: 'Oleo Script Swash Caps';
 }
+
 /* end footer section*/
 /*# sourceMappingURL=style.css.map */
