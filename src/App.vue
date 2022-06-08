@@ -45,8 +45,8 @@
             <div class="d-flex  flex-column flex-lg-row align-items-center w-100 justify-content-between">
               <ul class="navbar-nav  ">
                 <li class="nav-item active">
-                  <router-link v-if="lang == 'sr'" class="nav-link" to="/">Početna</router-link>
-                  <router-link v-else class="nav-link" to="/">Home</router-link>
+                  <router-link v-if="lang == 'sr'" class="nav-link" to="/sr">Početna</router-link>
+                  <router-link v-else class="nav-link" to="/eb">Home</router-link>
                 </li>
                 <li class="nav-item">
                   <div class="dropdown">
@@ -201,7 +201,7 @@ export default {
     }
   },
   watch:{
-    $route (to, from){
+    $route (){
         this.lang = this.$route.fullPath.split("/")[1]
         if (this.lang == "") 
           this.lang = "sr"

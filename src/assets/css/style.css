@@ -760,6 +760,12 @@ a:focus {
           justify-content: start;
 }
 
+.contact_section .custom_heading-container h3::after {
+  left: 0;
+  -webkit-transform: none;
+          transform: none;
+}
+
 .contact_section .custom_heading-container h2::after {
   left: 0;
   -webkit-transform: none;
@@ -779,6 +785,13 @@ a:focus {
 .contact_section .form_contaier form .form-control {
   border-radius: 0;
   height: 35px;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.contact_section .form_contaier form .form-control#description {
+  border-radius: 0;
+  height: 100px;
   -webkit-box-shadow: none;
           box-shadow: none;
 }
