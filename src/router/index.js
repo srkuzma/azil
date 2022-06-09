@@ -1,8 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
-import DogsView from '../views/DogsView.vue'
-import CatsView from '../views/CatsView.vue'
-import BirdsView from '../views/BirdsView.vue'
+import Animals from '../views/Animals.vue'
+import Animal from '../views/Animal.vue'
 import LostPets from '../views/LostPets.vue'
 import NewAd from '../views/NewAd.vue'
 import MyAccount from '../views/MyAccount.vue'
@@ -27,21 +26,15 @@ const routes = [
     name: 'home',
     component: Home
   },
-
   {
-    path: '/sr/zivotinje/psi',
-    name: 'dogs_sr',
-    component: DogsView
+    path: '/sr/zivotinje/:zivotinja',
+    name: 'animals_sr',
+    component: Animals
   },
   {
-    path: '/sr/zivotinje/ptice',
-    name: 'birds_sr',
-    component: BirdsView
-  },
-  {
-    path: '/sr/zivotinje/macke',
-    name: 'cats_sr',
-    component: CatsView
+    path: '/sr/zivotinje/:zivotinja/:ime',
+    name: 'animal_sr',
+    component: Animal
   },
   {
     path: '/sr/izgubljeni_ljubimci',
@@ -64,19 +57,14 @@ const routes = [
     component: AboutView
   },
   {
-    path: '/en/animals/dogs',
-    name: 'dogs_en',
-    component: DogsView
+    path: '/en/animals/:animal',
+    name: 'animals_en',
+    component: Animals
   },
   {
-    path: '/en/animals/birds',
-    name: 'birds_en',
-    component: BirdsView
-  },
-  {
-    path: '/en/animals/cats',
-    name: 'cats_en',
-    component: CatsView
+    path: '/en/animals/:animal/:name',
+    name: 'animal_en',
+    component: Animal
   },
   {
     path: '/en/lost_pets',
@@ -99,7 +87,7 @@ const routes = [
     component: AboutView
   },
   {
-    path: '/sr/login',
+    path: '/sr/prijava',
     name: 'login_sr',
     component: LoginView
   },

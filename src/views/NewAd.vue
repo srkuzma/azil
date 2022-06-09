@@ -77,7 +77,7 @@
                 localStorage.setItem('lost_pets', JSON.stringify([]));
             }
             else{
-                this.ads = JSON.parse(localStorage.getItem('lost_pets'));
+                this.lost_pets = JSON.parse(localStorage.getItem('lost_pets'));
             }
         },
         methods: {
