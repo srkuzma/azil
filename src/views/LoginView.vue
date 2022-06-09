@@ -18,14 +18,14 @@
             <div class="form_contaier">
             <form>
               <div class="form-group">
-                <label v-if="lang == 'sr'" for="exampleInputName1">Korisničko ime</label>
-                <label v-else for="exampleInputName1">Username</label>
-                <input type="text" class="form-control" id="exampleInputName1" v-model="username">
+                <label v-if="lang == 'sr'" for="username">Korisničko ime</label>
+                <label v-else for="username">Username</label>
+                <input type="text" class="form-control" id="username" v-model="username">
               </div>
               <div class="form-group">
-                <label v-if="lang == 'sr'" for="exampleInputName1">Šifra</label>
-                <label v-else for="exampleInputName1">Password</label>
-                <input type="password" class="form-control" id="exampleInputName1" v-model="password">
+                <label v-if="lang == 'sr'" for="password">Šifra</label>
+                <label v-else for="password">Password</label>
+                <input type="password" class="form-control" id="password" v-model="password">
               </div>
 
             <div class="error">{{error}}</div>
@@ -52,7 +52,7 @@
 import allUsers from '../data/users.js'
 
 export default {
-    name: 'Login',
+    name: 'LoginView',
     data(){
         return {
             users: allUsers,

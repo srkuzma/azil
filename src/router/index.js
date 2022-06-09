@@ -7,7 +7,7 @@ import LostPets from '../views/LostPets.vue'
 import NewAd from '../views/NewAd.vue'
 import MyAccount from '../views/MyAccount.vue'
 import AboutView from '../views/AboutView.vue'
-import Login from '../views/Login.vue'
+import LoginView from '../views/LoginView.vue'
 
 // import HomeLang from '../views/HomeLang.vue'
 
@@ -94,14 +94,19 @@ const routes = [
     component: MyAccount
   },
   {
+    path: '/en/about',
+    name: 'about_en',
+    component: AboutView
+  },
+  {
     path: '/sr/login',
     name: 'login_sr',
-    component: Login
+    component: LoginView
   },
   {
     path: '/en/login',
     name: 'login_en',
-    component: Login
+    component: LoginView
   },
 
 ]
