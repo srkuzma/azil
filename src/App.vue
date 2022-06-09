@@ -46,7 +46,7 @@
               <ul class="navbar-nav  ">
                 <li class="nav-item active">
                   <router-link v-if="lang == 'sr'" class="nav-link" to="/sr">Početna</router-link>
-                  <router-link v-else class="nav-link" to="/eb">Home</router-link>
+                  <router-link v-else class="nav-link" to="/en">Home</router-link>
                 </li>
                 <li class="nav-item">
                   <div class="dropdown">
@@ -91,7 +91,11 @@
               <div class="login_btn-contanier ml-0 ml-lg-5">
                 <router-link v-if= "lang == 'sr'" to="/sr/login">
                   <img src="/images/user.png" alt="">
-                  <span>
+                  <span v-if="lang == 'sr'">
+                    Prijava
+                  </span>
+
+                  <span v-else>
                     Login
                   </span>
                   
@@ -165,6 +169,10 @@ export default {
     this.lang = this.$route.fullPath.split("/")[1];
     if (this.lang == "") 
       this.lang = "sr"
+
+    if(localStorage.getItem('currentUser') == null) {
+      localStorage.setItem('currentUser', '')
+    }
   },
   methods: {
     change(new_lang){
