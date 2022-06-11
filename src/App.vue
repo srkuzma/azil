@@ -278,6 +278,7 @@ export default {
             { sr: "/sr/zivotinje/psi", en: "/en/animals/dogs" },
             { sr: "/sr/zivotinje/ptice", en: "/en/animals/birds" },
             { sr: "/sr", en: "/en" },
+            { sr: "/sr/komentari", en: "/en/comments"}
           ];
           if (curr_lang == "sr") {
             return pairs.find((pair) => pair.sr == fullPath).en;

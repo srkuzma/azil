@@ -84,9 +84,11 @@
             add() {
                 if(this.current_user != '') {
                     let lost_pet = {
-                        'name': this.pet_name,
-                        'description': this.description,
-                        'phone_number': this.phone_number
+                        name: this.pet_name,
+                        description: this.description,
+                        phone_number: this.phone_number,
+                        comments: [],
+                        author: this.current_user
                     }
 
                     this.lost_pets.push(lost_pet);

@@ -48,11 +48,13 @@ export default {
     if (this.lang == "") this.lang = "sr";
 
     this.lost_pets = JSON.parse(localStorage.getItem("lost_pets"));
-    this.lost_pets = this.lost_pets.slice(
-      this.lost_pets.length - 3,
-      this.lost_pets.length
-    );
-    this.lost_pets.reverse();
+
+    if(this.lost_pets.length >= 3)
+      this.lost_pets = this.lost_pets.slice(
+        this.lost_pets.length - 3,
+        this.lost_pets.length
+      );
+      this.lost_pets.reverse();
   },
 };
 </script>

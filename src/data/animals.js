@@ -1,6 +1,13 @@
 const animals = [
     {
         vrsta: "pas",
+        ime: "Bernandinac_Badi",
+        godine: "5",
+        opis: "Neki opis bernandinac Badi",
+        src: "/images/bernandinac.jfif"
+    },
+    {
+        vrsta: "pas",
         ime: "Labrador_Doni",
         godine: "5",
         opis: "Neki opis labrador Doni",
@@ -43,6 +50,13 @@ const animals = [
     },
     {
         vrsta: "ptica",
+        ime: "Ara_Bole",
+        godine: "10",
+        opis: "Neki opis are Bole",
+        src: "/images/macow.jpg"
+    },
+    {
+        vrsta: "ptica",
         ime: "Fazan_Spira",
         godine: "5",
         opis: "Neki opis fazana Spire",
@@ -53,7 +67,7 @@ const animals = [
         ime: "Orao_Beli",
         godine: "2",
         opis: "Neki opis orla Belog",
-        src: "/images/rotvajler.jpg"
+        src: "/images/orao.jpg"
     },
     {
         vrsta: "ptica",

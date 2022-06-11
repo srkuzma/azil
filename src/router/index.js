@@ -7,6 +7,7 @@ import NewAd from '../views/NewAd.vue'
 import MyAccount from '../views/MyAccount.vue'
 import AboutView from '../views/AboutView.vue'
 import LoginView from '../views/LoginView.vue'
+import Comments from '../views/Comments.vue'
 
 // import HomeLang from '../views/HomeLang.vue'
 
@@ -96,7 +97,16 @@ const routes = [
     name: 'login_en',
     component: LoginView
   },
-
+  {
+    path: '/sr/komentari/:lost_pet_id',
+    name: 'comments_sr',
+    component: Comments
+  },
+  {
+    path: '/en/comments/:lost_pet_id',
+    name: 'comments_en',
+    component: Comments
+  }
 ]
 
 const router = createRouter({
