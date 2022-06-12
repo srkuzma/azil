@@ -97,10 +97,10 @@
                     localStorage.setItem('add_error', '');
 
                     if(this.lang == 'sr') {
-                        this.$router.push('/sr/o_nama');
+                        this.$router.push('/sr/dodaj_oglas');
                     }
                     else {
-                        this.$router.push('/en/about');
+                        this.$router.push('/en/new_ad');
                     }
                 }
                 else {

@@ -4,20 +4,20 @@
       <div class="container layout_padding3">
         <div class="row">
           <div class="custom_heading-container">
-            <h2>O NAMA</h2>
+            <h2 v-if="lang == 'sr'">O NAMA</h2>
+            <h2 v-else>ABOUT</h2>
           </div>
         </div>
         <br />
         <br />
 
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-        mollit anim id est laborum.
+        <span  v-if="lang == 'sr'">
+          Azil Badi je osnovan 1997. godine uz pomoć i podršku Crvenog krsta i od tada obavlja misiju zaštite životinja sa područja Beograda. Izdvaja se po tome što je jedini azil u Srbiji sa odeljkom za ptice. Trenutno u azilu boravi oko 200 životinja. Badi je dobitnik brojnih nagrada i priznanja, uključujući i Oktobarsku povelju grada Beograda za humanost iz 2017.
+        </span>
 
+        <span v-else>
+Asylum Buddy was founded in 1997 with the help and support of the Red Cross, and since then it has been performing the mission of protecting animals from the area of Belgrade. It stands out because it is the only shelter in Serbia with a section for birds. About 200 animals are currently in the shelter. Buddy is the winner of numerous awards and recognitions, including the October Charter of the City of Belgrade for Humanity from 2017.    </span>
+        
         <br />
         <br />
 
@@ -36,7 +36,8 @@
         <br /><br /><br />
         <div class="row justify-content-center">
           <div class="contact-container">
-            <h3>Mapa</h3>
+            <h3 v-if="lang == 'sr'">Mapa</h3>
+            <h3 v-else>Map</h3>
           </div>
           
         </div>
@@ -56,7 +57,8 @@
         <br>
         <div class="row justify-content-center">
           <div class="contact-container">
-            <h3>Kontakt</h3>
+            <h3 v-if="lang == 'sr'">Kontakt</h3>
+            <h3 v-else>Contact</h3>
           </div>
           <br />
           <br />
@@ -72,5 +74,18 @@
 </template>
 
 <script>
-export default {};
+export default {
+  name: "Animal",
+  data() {
+    return {
+      lang: "",
+      animal: []
+    };
+  },
+  created() {
+    this.lang = this.$route.fullPath.split("/")[1]
+    if (this.lang == "") 
+      this.lang = "sr";
+  }
+};
 </script>

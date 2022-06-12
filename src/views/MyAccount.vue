@@ -1,7 +1,7 @@
 <template>
     <section class="contact_section layout_padding">
         <div class="row justify-content-center">
-            <div class="col text-center text-dark custom_heading-container justify-content-center">
+            <div class="col text-center text-dark justify-content-center animal-container">
                 <h1 v-if="lang == 'sr'" class="text-center">
                     MOJI OGLASI
                 </h1>
@@ -14,7 +14,7 @@
         <br>
 
         <div class="container-fluid layout_padding3">
-            <div class="row justify-content-center">
+            <div class="row">
                 <div v-for="lost_pet in lost_pets" :key="lost_pet.name" class="col-xl-4 col-lg-6 col-md-12 col-sm-12 col-12">
                     <div class="col-12">
                         <div>
@@ -59,7 +59,7 @@
         </div>
 
         <div class="row justify-content-center">
-            <div class="col text-center text-dark custom_heading-container justify-content-center">
+            <div class="col text-center text-dark justify-content-center animal-container">
                 <h1 v-if="lang == 'sr'" class="text-center">
                     MOJI KOMENTARI
                 </h1>
@@ -173,7 +173,10 @@
         created() {
             this.lang = this.$route.fullPath.split('/')[1];
             this.current_user = localStorage.getItem('currentUser');
-            let lost_pets = JSON.parse(localStorage.getItem('lost_pets'));
+            let lost_pets = [];
+            
+            if (localStorage.getItem('lost_pets'))
+                lost_pets = JSON.parse(localStorage.getItem('lost_pets'));
             
             for(let i = 0; i < lost_pets.length; i++) {
                 if(lost_pets[i].author == this.current_user) {
@@ -188,7 +191,6 @@
                 let comments = lost_pets[i].comments;
 
                 for(let j = 0; j < comments.length; j++) {
-                    console.log("lalalala")
                     if(comments[j].author == this.current_user) {
                         let comment = {
                             ad: lost_pets[i].name,
