@@ -192,7 +192,8 @@
         created() {
             this.lang = this.$route.fullPath.split('/')[1];
             let id = parseInt(this.$route.fullPath.split('/')[3])
-            this.lost_pet = JSON.parse(localStorage.getItem('lost_pets'))[id]
+            if (localStorage.getItem('lost_pets'))
+                this.lost_pet = JSON.parse(localStorage.getItem('lost_pets'))[id]
             this.comments = this.lost_pet.comments
         },
         methods: {

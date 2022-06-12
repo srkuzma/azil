@@ -1,7 +1,7 @@
 <template>
     <section class="contact_section layout_padding">
         <div class="row justify-content-center">
-            <div class="col text-center text-dark custom_heading-container justify-content-center">
+            <div class="col text-center text-dark animal-container justify-content-center">
                 <h1 v-if="lang == 'sr'" class="text-center">
                     IZGUBLJENI LJUBIMCI
                 </h1>
@@ -14,7 +14,7 @@
         <br>
 
         <div class="container-fluid layout_padding3">
-            <div class="row justify-content-center">
+            <div class="row">
                 <div v-for="(lost_pet, id) in lost_pets" :key="lost_pet.name" class="col-xl-4 col-lg-6 col-md-12 col-sm-12 col-12">
                     <div class="col-12">
                         <div>

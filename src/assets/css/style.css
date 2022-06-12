@@ -925,6 +925,16 @@ a:focus {
   font-weight: 500;
 }
 
+/* body {display: flex; flex-direction: column;} */
+
+#content {
+  min-height: calc(100vh - 60px);
+}
+
+.footer-section {
+  height: 60px;
+}
+
 .footer_section p {
   color: #fbfcfd;
   margin: 0;
@@ -964,7 +974,7 @@ a:focus {
 }
 
 
-#login-form, .ads {
+#login-form, .blog, .ads {
   background-color: rgb(246, 246, 246);
   padding: 2% 4%;
   border: 1px solid gray;
@@ -1081,6 +1091,10 @@ iframe {
 
 .tel_container {
   color: white
+}
+
+.margr15 {
+  margin-right: 15px;
 }
 /* end footer section*/
 /*# sourceMappingURL=style.css.map */
