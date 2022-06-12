@@ -14,7 +14,7 @@
         <br>
 
         <div class="container-fluid layout_padding3">
-            <div class="row">
+            <div class="row justify-content-center">
                 <div v-for="(lost_pet, id) in lost_pets" :key="lost_pet.name" class="col-xl-4 col-lg-6 col-md-12 col-sm-12 col-12">
                     <div class="col-12">
                         <div>

@@ -3,10 +3,10 @@
         <div class="row justify-content-center">
             <div class="col text-center text-dark custom_heading-container justify-content-center">
                 <h1 v-if="lang == 'sr'" class="text-center">
-                    MOJ NALOG
+                    MOJI OGLASI
                 </h1>
                 <h1 v-else class="text-center">
-                    MY ACCOUNT
+                    MY ADS
                 </h1>
             </div>
         </div>
@@ -14,7 +14,7 @@
         <br>
 
         <div class="container-fluid layout_padding3">
-            <div class="row">
+            <div class="row justify-content-center">
                 <div v-for="lost_pet in lost_pets" :key="lost_pet.name" class="col-xl-4 col-lg-6 col-md-12 col-sm-12 col-12">
                     <div class="col-12">
                         <div>
@@ -57,6 +57,47 @@
                 </div>
             </div>
         </div>
+
+        <div class="row justify-content-center">
+            <div class="col text-center text-dark custom_heading-container justify-content-center">
+                <h1 v-if="lang == 'sr'" class="text-center">
+                    MOJI KOMENTARI
+                </h1>
+                <h1 v-else class="text-center">
+                    MY COMMENTS
+                </h1>
+            </div>
+        </div>
+
+        <br>
+
+        <div class="container-fluid layout_padding3">
+            <div v-for="(comment, index) in comments" :key="index" class="row justify-content-center">
+                <div class="col-xl-6 col-lg-6 col-md-8 col-sm-12 col-12 comment-div">
+                    <div class="col-12">
+                        <div class="comment">
+                            <div class="row">
+                                <div class="col">
+                                    <h3>
+                                        {{ comment.text }}
+                                    </h3>
+                                </div>
+                            </div>
+
+                            <br>
+
+                            <div class="row">
+                                <div class="col">
+                                    <h4>
+                                        {{ comment.ad }}
+                                    </h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 </template>
 
@@ -65,7 +106,7 @@
         margin: auto;
     }
 
-    .announcement{
+    .announcement {
         background-color: rgb(246, 246, 246);
         padding: 2% 2%;
         border: 1px solid gray;
@@ -105,6 +146,17 @@
     .phone-number {
         padding: 0;
     }
+
+    .comment-div {
+        padding: 0;
+    }
+
+    .comment{
+        background-color: rgb(246, 246, 246);
+        padding: 2% 2%;
+        border: 1px solid gray;
+        margin-bottom: 35px;
+    }
 </style>
 
 <script>
@@ -114,7 +166,8 @@
             return {
                 lost_pets: [],
                 lang: '',
-                current_user: ''
+                current_user: '',
+                comments: []
             }
         },
         created() {
@@ -131,6 +184,20 @@
                         }
                     )
                 }
+
+                let comments = lost_pets[i].comments;
+
+                for(let j = 0; j < comments.length; j++) {
+                    console.log("lalalala")
+                    if(comments[j].author == this.current_user) {
+                        let comment = {
+                            ad: lost_pets[i].name,
+                            text: comments[j].text
+                        }
+
+                        this.comments.push(comment)
+                    }
+                }
             }
         },
         methods: {
@@ -138,7 +205,6 @@
                 let lost_pets = JSON.parse(localStorage.getItem('lost_pets'));
                 lost_pets.splice(id, 1)
                 localStorage.setItem('lost_pets', JSON.stringify(lost_pets))
-
             }
         }
     }
