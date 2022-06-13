@@ -234,7 +234,8 @@
                     pdf.save(lost_pet.name + ".pdf");
                 });
             }
-        }
+        },
+        
     }
 </script>
 
