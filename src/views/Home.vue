@@ -209,9 +209,9 @@ export default {
   methods: {
     more(id) {
       if (this.lang == "sr") {
-        this.$router.push("komentari/" + id);
+        this.$router.push("/sr/komentari/" + id);
       } else {
-        this.$router.push("comments/" + id);
+        this.$router.push("/en/comments/" + id);
       }
     },
     go(path){
