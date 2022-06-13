@@ -1,6 +1,6 @@
 <template>
   <title v-if="lang == 'sr'">Azil Badi {{ pageName }}</title>
-  <title v-else>Asylum Buddy {{ pageName }}</title>
+  <title v-else>Shelter Badi {{ pageName }}</title>
   <div class="hero_area">
     <div id="content">
       <header class="header_section">

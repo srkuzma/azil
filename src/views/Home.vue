@@ -1,7 +1,7 @@
 <template>
   <!-- header section strats -->
   <div class="home">
-    <div class="container layout_padding3">
+    <div class="container-fluid layout_padding3">
       <div class="row">
         <div class="col">
           <div class="custom_heading-container layout_padding2">
@@ -71,7 +71,7 @@
       </div>
 
       <div class="container-fluid layout_padding3">
-        <div class="row justify-content-center">
+        <div class="row">
           <div
             v-for="(pet, id) in pets"
             :key="pet.name"
@@ -172,6 +172,10 @@
 
 .phone-number {
   padding: 0;
+}
+
+.container {
+  padding: 0 !important;
 }
 </style>
 
