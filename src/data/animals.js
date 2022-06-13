@@ -3,8 +3,8 @@ const animals = [
         vrsta: "pas",
         ime: "Badi",
         godine: "5",
-        opis: "Neki opis bernandinac Badi",
-        opisEn: "Neki opis bernandinac Badi",
+        opis: "Bernandinac Badi je visok 70cm i dugačak 130cm. Potiče iz Holandije i u azilu je oko 7 meseci.",
+        opisEn: "Bernandine Buddy is 70 cm tall and 130 cm long. He comes from the Netherlands and has been in the asylum for about 7 months.",
         src: "/images/bernandinac.jfif"
     },
     {
