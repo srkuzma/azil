@@ -1,5 +1,6 @@
 <template>
-  <title>Azil Badi {{ pageName }}</title>
+  <title v-if="lang == 'sr'">Azil Badi {{ pageName }}</title>
+  <title v-else>Asylum Buddy {{ pageName }}</title>
   <div class="hero_area">
     <div id="content">
       <header class="header_section">
@@ -218,9 +219,9 @@
         </div>
       </header>
 
-      <div id="breadcrumbs" class="m-2 font-weight-bold">
-        {{ route }}
-      </div>
+      <a v-for="step in steps" :key="step.id"  class="m-2 font-weight-bold bread" @click = shorten(step.id)>  
+        {{ step.name }}
+      </a>
 
       <router-view />
     </div>
@@ -242,7 +243,7 @@
 </template>
 
 
-<style>
+<style scoped>
 @import "./assets/css/bootstrap.css";
 @import "./assets/css/responsive.css";
 @import "./assets/css/style.css";
@@ -251,6 +252,18 @@
   background-color: #2c2c2c;
   border-color: #2c2c2c;
 }
+
+
+.bread {
+  display: inline-block;
+  color: black;
+  
+}
+
+.bread:hover {
+  text-decoration: underline !important;
+}
+
 </style>
 
 <script>
@@ -263,6 +276,7 @@ export default {
       animals: [],
       route: "",
       pageName: "",
+      steps: []
     };
   },
   created() {
@@ -270,8 +284,9 @@ export default {
     if (this.lang == "") this.lang = "sr";
     let route = this.$route.fullPath.split("/");
     route = route.slice(2, route.length);
-
+    this.makeSteps(route);
     this.route = route.join(">");
+    
 
     if (localStorage.getItem("currentUser") == null) {
       localStorage.setItem("currentUser", "");
@@ -282,6 +297,14 @@ export default {
       : "";
   },
   methods: {
+    makeSteps(route){
+      let len = route.length;
+      let new_steps = [];
+      for(let i = 0; i < len; i++){
+        new_steps.push({id: len - 1 - i, name: route[i]});
+      }
+      this.steps = new_steps;
+    },
     formatStr(name){
        function capitalizeFirstLetter(string) {
         return string.charAt(0).toUpperCase() + string.slice(1);
@@ -306,6 +329,17 @@ export default {
       localStorage.setItem("currentUser", "");
       this.user = "";
     },
+    shorten(howMuch){
+      console.log(howMuch)
+      let route = this.$route.fullPath.split("/");
+      if (route[route.length - howMuch - 1] == 'zivotinje' || route[route.length - howMuch - 1] == 'animals'
+      || route[route.length - howMuch - 1] == 'komentari' || route[route.length - howMuch - 1] == 'comments')
+        return;
+      route = route.slice(0, route.length - howMuch);
+      console.log(route)
+      this.$router.push(route.join("/"));
+      
+    },
     change(new_lang) {
       let route = this.$route.fullPath.split("/");
 
@@ -317,8 +351,9 @@ export default {
       for (let i = 2; i < route.length; i++) {
         route[i] = this.formatStr(route[i]);
       }
-
+      this.makeSteps(route);
       this.route = route.join(">");
+      
 
       function findPair(new_lang, route) {
         let curr_lang = route[1];
@@ -344,9 +379,14 @@ export default {
           ];
           if (curr_lang == "sr") {
             if (route.length == 5){
-              let name = route[4];
+              let name = route[route.length - 1];
               let fullPath = route.slice(0, route.length - 1).join("/");
               return pairs.find((pair) => pair.sr == fullPath).en +"/"+ name;
+            }
+            if (route.length > 2 && route[2] == "komentari"){
+              let id = route[route.length - 1];
+              let fullPath = route.slice(0, route.length - 1).join("/");
+              return pairs.find((pair) => pair.sr == fullPath).en +"/"+ id;
             }
             return pairs.find((pair) => pair.sr == fullPath).en;
           } else {
@@ -354,6 +394,11 @@ export default {
               let name = route[4];
               let fullPath = route.slice(0, route.length - 1).join("/");
               return pairs.find((pair) => pair.en == fullPath).sr +"/"+ name;
+            }
+            if (route.length > 2 && route[2] == "comments"){
+              let id = route[route.length - 1];
+              let fullPath = route.slice(0, route.length - 1).join("/");
+              return pairs.find((pair) => pair.en == fullPath).sr +"/"+ id;
             }
             return pairs.find((pair) => pair.en == fullPath).sr;
           }
@@ -377,12 +422,14 @@ export default {
       }
       
       let route = this.$route.fullPath.split("/");
+      
       this.pageName = this.getPageName(route);
       for (let i = 2; i < route.length; i++) {
         route[i] = formatStr(route[i]);
       }
       route = route.slice(2, route.length);
       this.route = route.join(">");
+      this.makeSteps(route)
       this.lang = this.$route.fullPath.split("/")[1];
       if (this.lang == "") this.lang = "sr";
       this.user = localStorage.getItem("currentUser")
